@@ -4,7 +4,6 @@ export default class GameBoard {
   constructor() {
     this.allSunk = false;
     this.board = [];
-    this.shipsAbbreviations = {};
   }
 
   buildBoard() {
@@ -72,32 +71,8 @@ export default class GameBoard {
     }
   }
 
-  autoPlace() {
-    // Define board ships
-    const carrier = new Ship("c", 4, 0, false);
-    const destroyer1 = new Ship("d1", 3, 0, false);
-    const destroyer2 = new Ship("d2", 3, 0, false);
-    const patrolBoat1 = new Ship("p1", 2, 0, false);
-    const patrolBoat2 = new Ship("p2", 2, 0, false);
-    const patrolBoat3 = new Ship("p3", 2, 0, false);
-    const singleton1 = new Ship("s1", 1, 0, false);
-    const singleton2 = new Ship("s2", 1, 0, false);
-    const singleton3 = new Ship("s3", 1, 0, false);
-    const singleton4 = new Ship("s4", 1, 0, false);
+  autoPlace(shipsArr) {
 
-    // Add ships to array to place them randomly on the board
-    const shipsArr = [
-      carrier,
-      destroyer1,
-      destroyer2,
-      patrolBoat1,
-      patrolBoat2,
-      patrolBoat3,
-      singleton1,
-      singleton2,
-      singleton3,
-      singleton4,
-    ];
     const orientationArr = ["h", "v"];
 
     shipsArr.forEach((ship) => {
@@ -111,5 +86,13 @@ export default class GameBoard {
   receiveAttack(position) {
     const row = position[0];
     const col = position[1];
+    const cellStatus = this.board[row][col];
+    if (cellStatus === "empty") {
+      this.board[row][col] = "missed";
+    } else {
+      this.board[row][col] = "hit";
+    }
+    // Return attacking cell status to do the needful
+    return cellStatus;
   }
 }
