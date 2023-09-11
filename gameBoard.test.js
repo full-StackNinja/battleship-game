@@ -72,7 +72,30 @@ describe("autoPlace() Method", () => {
   test("check that all the 10 ships have been placed on the board randomly", () => {
     const gameBoard = new GameBoard();
     gameBoard.buildBoard();
-    gameBoard.autoPlace();
+    // Define board ships
+    const carrier = new Ship("c", 4, 0, false);
+    const destroyer1 = new Ship("d1", 3, 0, false);
+    const destroyer2 = new Ship("d2", 3, 0, false);
+    const patrolBoat1 = new Ship("p1", 2, 0, false);
+    const patrolBoat2 = new Ship("p2", 2, 0, false);
+    const patrolBoat3 = new Ship("p3", 2, 0, false);
+    const singleton1 = new Ship("s1", 1, 0, false);
+    const singleton2 = new Ship("s2", 1, 0, false);
+    const singleton3 = new Ship("s3", 1, 0, false);
+    const singleton4 = new Ship("s4", 1, 0, false);
+    const shipsArr = [
+      carrier,
+      destroyer1,
+      destroyer2,
+      patrolBoat1,
+      patrolBoat2,
+      patrolBoat3,
+      singleton1,
+      singleton2,
+      singleton3,
+      singleton4,
+    ];
+    gameBoard.autoPlace(shipsArr);
     const arr = [];
     gameBoard.board.forEach((row) =>
       row.forEach((cell) => (cell !== "empty" ? arr.push(cell) : arr.concat([])))
@@ -100,5 +123,51 @@ describe("autoPlace() Method", () => {
       "s4",
     ];
     expect(expectedArr).toEqual(expect.arrayContaining(arr));
+  });
+});
+
+describe("receiveAttack(position) Method", () => {
+  it("should check that attack is conceived on correct position", () => {
+    const gameBoard = new GameBoard();
+    gameBoard.buildBoard();
+    // Define board ships
+    const carrier = new Ship("c", 4, 0, false);
+    const destroyer1 = new Ship("d1", 3, 0, false);
+    const destroyer2 = new Ship("d2", 3, 0, false);
+    const patrolBoat1 = new Ship("p1", 2, 0, false);
+    const patrolBoat2 = new Ship("p2", 2, 0, false);
+    const patrolBoat3 = new Ship("p3", 2, 0, false);
+    const singleton1 = new Ship("s1", 1, 0, false);
+    const singleton2 = new Ship("s2", 1, 0, false);
+    const singleton3 = new Ship("s3", 1, 0, false);
+    const singleton4 = new Ship("s4", 1, 0, false);
+    const shipsArr = [
+      carrier,
+      destroyer1,
+      destroyer2,
+      patrolBoat1,
+      patrolBoat2,
+      patrolBoat3,
+      singleton1,
+      singleton2,
+      singleton3,
+      singleton4,
+    ];
+    gameBoard.autoPlace(shipsArr);
+
+    // Since ships are placed randomly, so first pick any cell on the board with ship and witout ship
+    const shipsPos = [];
+    const emptyPos = [];
+    gameBoard.board.forEach((row, rowIndex) =>
+      row.forEach((cell, colIndex) =>
+        cell !== "empty"
+          ? shipsPos.push({ pos: [rowIndex, colIndex], value: cell })
+          : emptyPos.push([rowIndex, colIndex])
+      )
+    );
+    // Check attack missed
+    expect(gameBoard.receiveAttack(emptyPos[0])).toBe("empty");
+    // Check ship got attacked
+    expect(gameBoard.receiveAttack(shipsPos[0].pos)).toBe(shipsPos[0].value);
   });
 });
