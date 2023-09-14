@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BattleShip Game</title>
+    <link rel="stylesheet" href="./meyer-reset.css" />
+    <link rel="stylesheet" href="./my-css-reset.css" />
+    <link rel="stylesheet" href="./normalize.css" />
+    <link rel="stylesheet" href="./typography.css" />
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./app.js"></script>
+  </head>
+  <body>
+    <div class="grids-container">
+      <table class="your-table">
+        <tr class="table-row">
+          <td class="table-cell" , data-row="0" , data-col="0" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="0" , data-col="1" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="0" , data-col="2" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="0" , data-col="3" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="0" , data-col="4" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="0" , data-col="5" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="0" , data-col="6" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="0" , data-col="7" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="0" , data-col="8" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="0" , data-col="9" ,data-value="empty"></td>
+        </tr>
+        <tr class="table-row">
+          <td class="table-cell" , data-row="1" , data-col="0" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="1" , data-col="1" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="1" , data-col="2" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="1" , data-col="3" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="1" , data-col="4" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="1" , data-col="5" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="1" , data-col="6" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="1" , data-col="7" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="1" , data-col="8" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="1" , data-col="9" ,data-value="empty"></td>
+        </tr>
+        <tr class="table-row">
+          <td class="table-cell" , data-row="2" , data-col="0" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="2" , data-col="1" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="2" , data-col="2" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="2" , data-col="3" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="2" , data-col="4" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="2" , data-col="5" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="2" , data-col="6" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="2" , data-col="7" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="2" , data-col="8" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="2" , data-col="9" ,data-value="empty"></td>
+        </tr>
+        <tr class="table-row">
+          <td class="table-cell" , data-row="3" , data-col="0" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="3" , data-col="1" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="3" , data-col="2" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="3" , data-col="3" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="3" , data-col="4" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="3" , data-col="5" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="3" , data-col="6" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="3" , data-col="7" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="3" , data-col="8" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="3" , data-col="9" ,data-value="empty"></td>
+        </tr>
+        <tr class="table-row">
+          <td class="table-cell" , data-row="4" , data-col="0" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="4" , data-col="1" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="4" , data-col="2" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="4" , data-col="3" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="4" , data-col="4" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="4" , data-col="5" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="4" , data-col="6" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="4" , data-col="7" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="4" , data-col="8" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="4" , data-col="9" ,data-value="empty"></td>
+        </tr>
+        <tr class="table-row">
+          <td class="table-cell" , data-row="5" , data-col="0" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="5" , data-col="1" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="5" , data-col="2" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="5" , data-col="3" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="5" , data-col="4" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="5" , data-col="5" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="5" , data-col="6" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="5" , data-col="7" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="5" , data-col="8" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="5" , data-col="9" ,data-value="empty"></td>
+        </tr>
+        <tr class="table-row">
+          <td class="table-cell" , data-row="6" , data-col="0" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="6" , data-col="1" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="6" , data-col="2" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="6" , data-col="3" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="6" , data-col="4" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="6" , data-col="5" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="6" , data-col="6" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="6" , data-col="7" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="6" , data-col="8" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="6" , data-col="9" ,data-value="empty"></td>
+        </tr>
+        <tr class="table-row">
+          <td class="table-cell" , data-row="7" , data-col="0" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="7" , data-col="1" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="7" , data-col="2" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="7" , data-col="3" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="7" , data-col="4" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="7" , data-col="5" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="7" , data-col="6" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="7" , data-col="7" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="7" , data-col="8" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="7" , data-col="9" ,data-value="empty"></td>
+        </tr>
+        <tr class="table-row">
+          <td class="table-cell" , data-row="8" , data-col="0" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="8" , data-col="1" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="8" , data-col="2" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="8" , data-col="3" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="8" , data-col="4" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="8" , data-col="5" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="8" , data-col="6" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="8" , data-col="7" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="8" , data-col="8" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="8" , data-col="9" ,data-value="empty"></td>
+        </tr>
+        <tr class="table-row">
+          <td class="table-cell" , data-row="9" , data-col="0" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="9" , data-col="1" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="9" , data-col="2" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="9" , data-col="3" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="9" , data-col="4" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="9" , data-col="5" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="9" , data-col="6" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="9" , data-col="7" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="9" , data-col="8" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="9" , data-col="9" ,data-value="empty"></td>
+        </tr>
+      </table>
+      <table class="opponent-table">
+        <tr class="table-row">
+          <td class="table-cell" , data-row="0" , data-col="0" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="0" , data-col="1" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="0" , data-col="2" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="0" , data-col="3" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="0" , data-col="4" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="0" , data-col="5" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="0" , data-col="6" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="0" , data-col="7" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="0" , data-col="8" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="0" , data-col="9" ,data-value="empty"></td>
+        </tr>
+        <tr class="table-row">
+          <td class="table-cell" , data-row="1" , data-col="0" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="1" , data-col="1" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="1" , data-col="2" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="1" , data-col="3" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="1" , data-col="4" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="1" , data-col="5" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="1" , data-col="6" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="1" , data-col="7" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="1" , data-col="8" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="1" , data-col="9" ,data-value="empty"></td>
+        </tr>
+        <tr class="table-row">
+          <td class="table-cell" , data-row="2" , data-col="0" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="2" , data-col="1" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="2" , data-col="2" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="2" , data-col="3" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="2" , data-col="4" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="2" , data-col="5" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="2" , data-col="6" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="2" , data-col="7" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="2" , data-col="8" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="2" , data-col="9" ,data-value="empty"></td>
+        </tr>
+        <tr class="table-row">
+          <td class="table-cell" , data-row="3" , data-col="0" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="3" , data-col="1" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="3" , data-col="2" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="3" , data-col="3" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="3" , data-col="4" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="3" , data-col="5" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="3" , data-col="6" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="3" , data-col="7" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="3" , data-col="8" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="3" , data-col="9" ,data-value="empty"></td>
+        </tr>
+        <tr class="table-row">
+          <td class="table-cell" , data-row="4" , data-col="0" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="4" , data-col="1" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="4" , data-col="2" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="4" , data-col="3" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="4" , data-col="4" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="4" , data-col="5" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="4" , data-col="6" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="4" , data-col="7" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="4" , data-col="8" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="4" , data-col="9" ,data-value="empty"></td>
+        </tr>
+        <tr class="table-row">
+          <td class="table-cell" , data-row="5" , data-col="0" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="5" , data-col="1" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="5" , data-col="2" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="5" , data-col="3" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="5" , data-col="4" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="5" , data-col="5" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="5" , data-col="6" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="5" , data-col="7" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="5" , data-col="8" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="5" , data-col="9" ,data-value="empty"></td>
+        </tr>
+        <tr class="table-row">
+          <td class="table-cell" , data-row="6" , data-col="0" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="6" , data-col="1" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="6" , data-col="2" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="6" , data-col="3" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="6" , data-col="4" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="6" , data-col="5" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="6" , data-col="6" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="6" , data-col="7" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="6" , data-col="8" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="6" , data-col="9" ,data-value="empty"></td>
+        </tr>
+        <tr class="table-row">
+          <td class="table-cell" , data-row="7" , data-col="0" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="7" , data-col="1" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="7" , data-col="2" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="7" , data-col="3" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="7" , data-col="4" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="7" , data-col="5" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="7" , data-col="6" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="7" , data-col="7" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="7" , data-col="8" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="7" , data-col="9" ,data-value="empty"></td>
+        </tr>
+        <tr class="table-row">
+          <td class="table-cell" , data-row="8" , data-col="0" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="8" , data-col="1" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="8" , data-col="2" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="8" , data-col="3" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="8" , data-col="4" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="8" , data-col="5" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="8" , data-col="6" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="8" , data-col="7" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="8" , data-col="8" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="8" , data-col="9" ,data-value="empty"></td>
+        </tr>
+        <tr class="table-row">
+          <td class="table-cell" , data-row="9" , data-col="0" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="9" , data-col="1" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="9" , data-col="2" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="9" , data-col="3" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="9" , data-col="4" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="9" , data-col="5" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="9" , data-col="6" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="9" , data-col="7" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="9" , data-col="8" ,data-value="empty"></td>
+          <td class="table-cell" , data-row="9" , data-col="9" ,data-value="empty"></td>
+        </tr>
+      </table>
+    </div>
+  </body>
+</html>
