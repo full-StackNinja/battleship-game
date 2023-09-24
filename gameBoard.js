@@ -1,5 +1,3 @@
-import Ship from "./ship";
-
 export default class GameBoard {
   constructor() {
     this.allSunk = false;
@@ -14,6 +12,39 @@ export default class GameBoard {
       }
       this.board.push(row);
     }
+  }
+
+  isValidPos(row, col, length, orient) {
+    if (orient === "x" && col + 1 - length >= 0) {
+      const boardRow = this.board[row];
+      for (let i = col; i > col - length; i -= 1) {
+        if (boardRow[i] !== "empty") return false;
+      }
+      return true;
+    }
+    if (orient === "y" && row + 1 - length >= 0) {
+      for (let i = row; i > row - length; i -= 1) {
+        if (this.board[i][col] !== "empty") return false;
+      }
+      return true;
+    }
+
+    return false;
+  }
+
+  updateBoard(row, col, shipName, length, orient) {
+    if (orient === "x") {
+      const boardRow = this.board[row];
+      for (let i = col; i > col - length; i -= 1) {
+        boardRow[i] = shipName;
+      }
+    }
+    if (orient === "y") {
+      for (let i = row; i > row - length; i -= 1) {
+        this.board[i][col] = shipName;
+      }
+    }
+    console.log(this.board);
   }
 
   #getStartIndex(n, orientation) {
@@ -72,7 +103,6 @@ export default class GameBoard {
   }
 
   autoPlace(shipsArr) {
-
     const orientationArr = ["h", "v"];
 
     shipsArr.forEach((ship) => {
@@ -92,7 +122,7 @@ export default class GameBoard {
     } else {
       this.board[row][col] = "hit";
     }
-    // Return attacking cell status to do the needful
+    // Return attacking cell status
     return cellStatus;
   }
 }
