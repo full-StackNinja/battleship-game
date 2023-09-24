@@ -2,18 +2,18 @@
 import GameBoard from "./gameBoard.js";
 import Ship from "./ship.js";
 
-export default function player() {
+export default (function player() {
   const newPlayer = {};
-  newPlayer.carrier = new Ship("carrier", 4);
-  newPlayer.distroyer1 = new Ship("distroyer1", 3);
-  newPlayer.distroyer2 = new Ship("distroyer2", 3);
-  newPlayer.patrolBoat1 = new Ship("patrolBoat1", 2);
-  newPlayer.patrolBoat2 = new Ship("patrolBoat2", 2);
-  newPlayer.patrolBoat3 = new Ship("patrolBoat3", 2);
-  newPlayer.singleton1 = new Ship("singleton1", 1);
-  newPlayer.singleton2 = new Ship("singleton2", 1);
-  newPlayer.singleton3 = new Ship("singleton3", 1);
-  newPlayer.singleton4 = new Ship("singleton4", 1);
+  newPlayer.c1 = new Ship("c1", 4);
+  newPlayer.d1 = new Ship("d1", 3);
+  newPlayer.d2 = new Ship("d2", 3);
+  newPlayer.p1 = new Ship("p1", 2);
+  newPlayer.p2 = new Ship("p2", 2);
+  newPlayer.p3 = new Ship("p3", 2);
+  newPlayer.s1 = new Ship("s1", 1);
+  newPlayer.s2 = new Ship("s2", 1);
+  newPlayer.s3 = new Ship("s3", 1);
+  newPlayer.s4 = new Ship("s4", 1);
   Object.setPrototypeOf(newPlayer, new GameBoard());
   return newPlayer;
-}
+})();
