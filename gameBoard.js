@@ -237,18 +237,3 @@ export default class GameBoard {
     return cellStatus;
   }
 }
-const shipNames = [
-  ["c1", "Carrier", 4],
-  ["d1", "Distroyer", 3],
-  ["d2", "Distroyer", 3],
-  ["p1", "Patrol Boat", 2],
-  ["p2", "Patrol Boat", 2],
-  ["p3", "Patrol Boat", 2],
-  ["s1", "Singleton", 1],
-  ["s2", "Singleton", 1],
-  ["s3", "Singleton", 1],
-  ["s4", "Singleton", 1],
-];
-const b = new GameBoard();
-b.buildBoard();
-b.autoFillShipsBoard(shipNames);
