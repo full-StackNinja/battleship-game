@@ -14,6 +14,7 @@ export default (function player() {
   newPlayer.s2 = new Ship("s2", 1);
   newPlayer.s3 = new Ship("s3", 1);
   newPlayer.s4 = new Ship("s4", 1);
-  Object.setPrototypeOf(newPlayer, new GameBoard());
+  // Object.setPrototypeOf(newPlayer, new GameBoard());
+  newPlayer.gameBoard = new GameBoard()
   return newPlayer;
 })();
