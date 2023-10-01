@@ -107,7 +107,7 @@ export default (function domManipulation() {
       const ship = createShip(shipName, length, orient);
 
       // Also update table cell's data-value with shipName
-      updateCellVal(playerName, shipName, end, length,orient);
+      updateCellVal(playerName, shipName, end, length, orient);
       // console.log(ship)
       // Call game play page
       const gamePlayPage = document.querySelector(".gameplay-page");
@@ -297,11 +297,17 @@ export default (function domManipulation() {
     const shipPage = document.querySelector(".ship-placement-page");
     shipPage.classList.add("hide");
   }
+  function turnMessage(turn) {
+    const message = document.querySelector(".turn-message");
+    if (turn === "player") message.textContent = "Your Turn";
+    else message.textContent = "AI's turn";
+  }
   return {
     resetTable,
     placeShips,
     hideInitPage,
     hideShipPage,
     autoPlaceShips,
+    turnMessage,
   };
 })();
