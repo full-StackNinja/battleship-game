@@ -229,8 +229,8 @@ export default class GameBoard {
     const col = position[1];
     const cellStatus = this.board[row][col];
     if (cellStatus === "empty") {
-      this.board[row][col] = "missed";
-    } else {
+      this.board[row][col] = "miss";
+    } else if (cellStatus !== "miss" && cellStatus !== "hit") {
       this.board[row][col] = "hit";
     }
     // Return attacking cell status
