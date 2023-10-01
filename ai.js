@@ -14,7 +14,16 @@ export default (function ai() {
   newAI.s2 = new Ship("singleton2", 1);
   newAI.s3 = new Ship("singleton3", 1);
   newAI.s4 = new Ship("singleton4", 1);
-  // Object.setPrototypeOf(newAI, new GameBoard());
+  newAI.allSunk = () => {
+    const shipNames = ["c1", "d1", "d2", "p1", "p2", "p3", "s1", "s2", "s3", "s4"];
+    let allSunk = true;
+    shipNames.forEach((ship) => {
+      if (!newAI[ship].sunk) {
+        allSunk = false;
+      }
+    });
+    return allSunk;
+  };
   newAI.gameBoard = new GameBoard();
   return newAI;
 })();
