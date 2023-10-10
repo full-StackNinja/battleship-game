@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BattleShip Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Tourney&display=swap" rel="stylesheet" />
+  <script defer src="bundle.js"></script></head>
+  <body>
+    <div class="initial-page">
+      <h1 class="init-page game-title">BATTLESHIP</h1>
+      <button class="init-page game-start">GET INTO WARS!</button>
+    </div>
+    <div class="ship-placement-page hide">
+      <p class="ship-name"></p>
+      <button class="rotate-btn">
+        <span class="rotate-text">Rotate</span>
+        <!-- <img class="random-icon" alt="Rotate ship" /> -->
+      </button>
+      <div class="your-grid">
+        <table class="set-ships your-table">
+          <tr class="table-row">
+            <td class="table-cell" data-row="0" data-col="0" data-value="empty"></td>
+            <td class="table-cell" data-row="0" data-col="1" data-value="empty"></td>
+            <td class="table-cell" data-row="0" data-col="2" data-value="empty"></td>
+            <td class="table-cell" data-row="0" data-col="3" data-value="empty"></td>
+            <td class="table-cell" data-row="0" data-col="4" data-value="empty"></td>
+            <td class="table-cell" data-row="0" data-col="5" data-value="empty"></td>
+            <td class="table-cell" data-row="0" data-col="6" data-value="empty"></td>
+            <td class="table-cell" data-row="0" data-col="7" data-value="empty"></td>
+            <td class="table-cell" data-row="0" data-col="8" data-value="empty"></td>
+            <td class="table-cell" data-row="0" data-col="9" data-value="empty"></td>
+          </tr>
+          <tr class="table-row">
+            <td class="table-cell" data-row="1" data-col="0" data-value="empty"></td>
+            <td class="table-cell" data-row="1" data-col="1" data-value="empty"></td>
+            <td class="table-cell" data-row="1" data-col="2" data-value="empty"></td>
+            <td class="table-cell" data-row="1" data-col="3" data-value="empty"></td>
+            <td class="table-cell" data-row="1" data-col="4" data-value="empty"></td>
+            <td class="table-cell" data-row="1" data-col="5" data-value="empty"></td>
+            <td class="table-cell" data-row="1" data-col="6" data-value="empty"></td>
+            <td class="table-cell" data-row="1" data-col="7" data-value="empty"></td>
+            <td class="table-cell" data-row="1" data-col="8" data-value="empty"></td>
+            <td class="table-cell" data-row="1" data-col="9" data-value="empty"></td>
+          </tr>
+          <tr class="table-row">
+            <td class="table-cell" data-row="2" data-col="0" data-value="empty"></td>
+            <td class="table-cell" data-row="2" data-col="1" data-value="empty"></td>
+            <td class="table-cell" data-row="2" data-col="2" data-value="empty"></td>
+            <td class="table-cell" data-row="2" data-col="3" data-value="empty"></td>
+            <td class="table-cell" data-row="2" data-col="4" data-value="empty"></td>
+            <td class="table-cell" data-row="2" data-col="5" data-value="empty"></td>
+            <td class="table-cell" data-row="2" data-col="6" data-value="empty"></td>
+            <td class="table-cell" data-row="2" data-col="7" data-value="empty"></td>
+            <td class="table-cell" data-row="2" data-col="8" data-value="empty"></td>
+            <td class="table-cell" data-row="2" data-col="9" data-value="empty"></td>
+          </tr>
+          <tr class="table-row">
+            <td class="table-cell" data-row="3" data-col="0" data-value="empty"></td>
+            <td class="table-cell" data-row="3" data-col="1" data-value="empty"></td>
+            <td class="table-cell" data-row="3" data-col="2" data-value="empty"></td>
+            <td class="table-cell" data-row="3" data-col="3" data-value="empty"></td>
+            <td class="table-cell" data-row="3" data-col="4" data-value="empty"></td>
+            <td class="table-cell" data-row="3" data-col="5" data-value="empty"></td>
+            <td class="table-cell" data-row="3" data-col="6" data-value="empty"></td>
+            <td class="table-cell" data-row="3" data-col="7" data-value="empty"></td>
+            <td class="table-cell" data-row="3" data-col="8" data-value="empty"></td>
+            <td class="table-cell" data-row="3" data-col="9" data-value="empty"></td>
+          </tr>
+          <tr class="table-row">
+            <td class="table-cell" data-row="4" data-col="0" data-value="empty"></td>
+            <td class="table-cell" data-row="4" data-col="1" data-value="empty"></td>
+            <td class="table-cell" data-row="4" data-col="2" data-value="empty"></td>
+            <td class="table-cell" data-row="4" data-col="3" data-value="empty"></td>
+            <td class="table-cell" data-row="4" data-col="4" data-value="empty"></td>
+            <td class="table-cell" data-row="4" data-col="5" data-value="empty"></td>
+            <td class="table-cell" data-row="4" data-col="6" data-value="empty"></td>
+            <td class="table-cell" data-row="4" data-col="7" data-value="empty"></td>
+            <td class="table-cell" data-row="4" data-col="8" data-value="empty"></td>
+            <td class="table-cell" data-row="4" data-col="9" data-value="empty"></td>
+          </tr>
+          <tr class="table-row">
+            <td class="table-cell" data-row="5" data-col="0" data-value="empty"></td>
+            <td class="table-cell" data-row="5" data-col="1" data-value="empty"></td>
+            <td class="table-cell" data-row="5" data-col="2" data-value="empty"></td>
+            <td class="table-cell" data-row="5" data-col="3" data-value="empty"></td>
+            <td class="table-cell" data-row="5" data-col="4" data-value="empty"></td>
+            <td class="table-cell" data-row="5" data-col="5" data-value="empty"></td>
+            <td class="table-cell" data-row="5" data-col="6" data-value="empty"></td>
+            <td class="table-cell" data-row="5" data-col="7" data-value="empty"></td>
+            <td class="table-cell" data-row="5" data-col="8" data-value="empty"></td>
+            <td class="table-cell" data-row="5" data-col="9" data-value="empty"></td>
+          </tr>
+          <tr class="table-row">
+            <td class="table-cell" data-row="6" data-col="0" data-value="empty"></td>
+            <td class="table-cell" data-row="6" data-col="1" data-value="empty"></td>
+            <td class="table-cell" data-row="6" data-col="2" data-value="empty"></td>
+            <td class="table-cell" data-row="6" data-col="3" data-value="empty"></td>
+            <td class="table-cell" data-row="6" data-col="4" data-value="empty"></td>
+            <td class="table-cell" data-row="6" data-col="5" data-value="empty"></td>
+            <td class="table-cell" data-row="6" data-col="6" data-value="empty"></td>
+            <td class="table-cell" data-row="6" data-col="7" data-value="empty"></td>
+            <td class="table-cell" data-row="6" data-col="8" data-value="empty"></td>
+            <td class="table-cell" data-row="6" data-col="9" data-value="empty"></td>
+          </tr>
+          <tr class="table-row">
+            <td class="table-cell" data-row="7" data-col="0" data-value="empty"></td>
+            <td class="table-cell" data-row="7" data-col="1" data-value="empty"></td>
+            <td class="table-cell" data-row="7" data-col="2" data-value="empty"></td>
+            <td class="table-cell" data-row="7" data-col="3" data-value="empty"></td>
+            <td class="table-cell" data-row="7" data-col="4" data-value="empty"></td>
+            <td class="table-cell" data-row="7" data-col="5" data-value="empty"></td>
+            <td class="table-cell" data-row="7" data-col="6" data-value="empty"></td>
+            <td class="table-cell" data-row="7" data-col="7" data-value="empty"></td>
+            <td class="table-cell" data-row="7" data-col="8" data-value="empty"></td>
+            <td class="table-cell" data-row="7" data-col="9" data-value="empty"></td>
+          </tr>
+          <tr class="table-row">
+            <td class="table-cell" data-row="8" data-col="0" data-value="empty"></td>
+            <td class="table-cell" data-row="8" data-col="1" data-value="empty"></td>
+            <td class="table-cell" data-row="8" data-col="2" data-value="empty"></td>
+            <td class="table-cell" data-row="8" data-col="3" data-value="empty"></td>
+            <td class="table-cell" data-row="8" data-col="4" data-value="empty"></td>
+            <td class="table-cell" data-row="8" data-col="5" data-value="empty"></td>
+            <td class="table-cell" data-row="8" data-col="6" data-value="empty"></td>
+            <td class="table-cell" data-row="8" data-col="7" data-value="empty"></td>
+            <td class="table-cell" data-row="8" data-col="8" data-value="empty"></td>
+            <td class="table-cell" data-row="8" data-col="9" data-value="empty"></td>
+          </tr>
+          <tr class="table-row">
+            <td class="table-cell" data-row="9" data-col="0" data-value="empty"></td>
+            <td class="table-cell" data-row="9" data-col="1" data-value="empty"></td>
+            <td class="table-cell" data-row="9" data-col="2" data-value="empty"></td>
+            <td class="table-cell" data-row="9" data-col="3" data-value="empty"></td>
+            <td class="table-cell" data-row="9" data-col="4" data-value="empty"></td>
+            <td class="table-cell" data-row="9" data-col="5" data-value="empty"></td>
+            <td class="table-cell" data-row="9" data-col="6" data-value="empty"></td>
+            <td class="table-cell" data-row="9" data-col="7" data-value="empty"></td>
+            <td class="table-cell" data-row="9" data-col="8" data-value="empty"></td>
+            <td class="table-cell" data-row="9" data-col="9" data-value="empty"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <div class="gameplay-page hide">
+      <h1 class="game-title">BATTLESHIP</h1>
+      <div class="turn-message"></div>
+      <div class="grids-container">
+        <div class="your-grid">
+          <table class="your-table your-table-gameplay-page">
+            <tr class="table-row">
+              <td class="table-cell" data-row="0" data-col="0" data-value="empty"></td>
+              <td class="table-cell" data-row="0" data-col="1" data-value="empty"></td>
+              <td class="table-cell" data-row="0" data-col="2" data-value="empty"></td>
+              <td class="table-cell" data-row="0" data-col="3" data-value="empty"></td>
+              <td class="table-cell" data-row="0" data-col="4" data-value="empty"></td>
+              <td class="table-cell" data-row="0" data-col="5" data-value="empty"></td>
+              <td class="table-cell" data-row="0" data-col="6" data-value="empty"></td>
+              <td class="table-cell" data-row="0" data-col="7" data-value="empty"></td>
+              <td class="table-cell" data-row="0" data-col="8" data-value="empty"></td>
+              <td class="table-cell" data-row="0" data-col="9" data-value="empty"></td>
+            </tr>
+            <tr class="table-row">
+              <td class="table-cell" data-row="1" data-col="0" data-value="empty"></td>
+              <td class="table-cell" data-row="1" data-col="1" data-value="empty"></td>
+              <td class="table-cell" data-row="1" data-col="2" data-value="empty"></td>
+              <td class="table-cell" data-row="1" data-col="3" data-value="empty"></td>
+              <td class="table-cell" data-row="1" data-col="4" data-value="empty"></td>
+              <td class="table-cell" data-row="1" data-col="5" data-value="empty"></td>
+              <td class="table-cell" data-row="1" data-col="6" data-value="empty"></td>
+              <td class="table-cell" data-row="1" data-col="7" data-value="empty"></td>
+              <td class="table-cell" data-row="1" data-col="8" data-value="empty"></td>
+              <td class="table-cell" data-row="1" data-col="9" data-value="empty"></td>
+            </tr>
+            <tr class="table-row">
+              <td class="table-cell" data-row="2" data-col="0" data-value="empty"></td>
+              <td class="table-cell" data-row="2" data-col="1" data-value="empty"></td>
+              <td class="table-cell" data-row="2" data-col="2" data-value="empty"></td>
+              <td class="table-cell" data-row="2" data-col="3" data-value="empty"></td>
+              <td class="table-cell" data-row="2" data-col="4" data-value="empty"></td>
+              <td class="table-cell" data-row="2" data-col="5" data-value="empty"></td>
+              <td class="table-cell" data-row="2" data-col="6" data-value="empty"></td>
+              <td class="table-cell" data-row="2" data-col="7" data-value="empty"></td>
+              <td class="table-cell" data-row="2" data-col="8" data-value="empty"></td>
+              <td class="table-cell" data-row="2" data-col="9" data-value="empty"></td>
+            </tr>
+            <tr class="table-row">
+              <td class="table-cell" data-row="3" data-col="0" data-value="empty"></td>
+              <td class="table-cell" data-row="3" data-col="1" data-value="empty"></td>
+              <td class="table-cell" data-row="3" data-col="2" data-value="empty"></td>
+              <td class="table-cell" data-row="3" data-col="3" data-value="empty"></td>
+              <td class="table-cell" data-row="3" data-col="4" data-value="empty"></td>
+              <td class="table-cell" data-row="3" data-col="5" data-value="empty"></td>
+              <td class="table-cell" data-row="3" data-col="6" data-value="empty"></td>
+              <td class="table-cell" data-row="3" data-col="7" data-value="empty"></td>
+              <td class="table-cell" data-row="3" data-col="8" data-value="empty"></td>
+              <td class="table-cell" data-row="3" data-col="9" data-value="empty"></td>
+            </tr>
+            <tr class="table-row">
+              <td class="table-cell" data-row="4" data-col="0" data-value="empty"></td>
+              <td class="table-cell" data-row="4" data-col="1" data-value="empty"></td>
+              <td class="table-cell" data-row="4" data-col="2" data-value="empty"></td>
+              <td class="table-cell" data-row="4" data-col="3" data-value="empty"></td>
+              <td class="table-cell" data-row="4" data-col="4" data-value="empty"></td>
+              <td class="table-cell" data-row="4" data-col="5" data-value="empty"></td>
+              <td class="table-cell" data-row="4" data-col="6" data-value="empty"></td>
+              <td class="table-cell" data-row="4" data-col="7" data-value="empty"></td>
+              <td class="table-cell" data-row="4" data-col="8" data-value="empty"></td>
+              <td class="table-cell" data-row="4" data-col="9" data-value="empty"></td>
+            </tr>
+            <tr class="table-row">
+              <td class="table-cell" data-row="5" data-col="0" data-value="empty"></td>
+              <td class="table-cell" data-row="5" data-col="1" data-value="empty"></td>
+              <td class="table-cell" data-row="5" data-col="2" data-value="empty"></td>
+              <td class="table-cell" data-row="5" data-col="3" data-value="empty"></td>
+              <td class="table-cell" data-row="5" data-col="4" data-value="empty"></td>
+              <td class="table-cell" data-row="5" data-col="5" data-value="empty"></td>
+              <td class="table-cell" data-row="5" data-col="6" data-value="empty"></td>
+              <td class="table-cell" data-row="5" data-col="7" data-value="empty"></td>
+              <td class="table-cell" data-row="5" data-col="8" data-value="empty"></td>
+              <td class="table-cell" data-row="5" data-col="9" data-value="empty"></td>
+            </tr>
+            <tr class="table-row">
+              <td class="table-cell" data-row="6" data-col="0" data-value="empty"></td>
+              <td class="table-cell" data-row="6" data-col="1" data-value="empty"></td>
+              <td class="table-cell" data-row="6" data-col="2" data-value="empty"></td>
+              <td class="table-cell" data-row="6" data-col="3" data-value="empty"></td>
+              <td class="table-cell" data-row="6" data-col="4" data-value="empty"></td>
+              <td class="table-cell" data-row="6" data-col="5" data-value="empty"></td>
+              <td class="table-cell" data-row="6" data-col="6" data-value="empty"></td>
+              <td class="table-cell" data-row="6" data-col="7" data-value="empty"></td>
+              <td class="table-cell" data-row="6" data-col="8" data-value="empty"></td>
+              <td class="table-cell" data-row="6" data-col="9" data-value="empty"></td>
+            </tr>
+            <tr class="table-row">
+              <td class="table-cell" data-row="7" data-col="0" data-value="empty"></td>
+              <td class="table-cell" data-row="7" data-col="1" data-value="empty"></td>
+              <td class="table-cell" data-row="7" data-col="2" data-value="empty"></td>
+              <td class="table-cell" data-row="7" data-col="3" data-value="empty"></td>
+              <td class="table-cell" data-row="7" data-col="4" data-value="empty"></td>
+              <td class="table-cell" data-row="7" data-col="5" data-value="empty"></td>
+              <td class="table-cell" data-row="7" data-col="6" data-value="empty"></td>
+              <td class="table-cell" data-row="7" data-col="7" data-value="empty"></td>
+              <td class="table-cell" data-row="7" data-col="8" data-value="empty"></td>
+              <td class="table-cell" data-row="7" data-col="9" data-value="empty"></td>
+            </tr>
+            <tr class="table-row">
+              <td class="table-cell" data-row="8" data-col="0" data-value="empty"></td>
+              <td class="table-cell" data-row="8" data-col="1" data-value="empty"></td>
+              <td class="table-cell" data-row="8" data-col="2" data-value="empty"></td>
+              <td class="table-cell" data-row="8" data-col="3" data-value="empty"></td>
+              <td class="table-cell" data-row="8" data-col="4" data-value="empty"></td>
+              <td class="table-cell" data-row="8" data-col="5" data-value="empty"></td>
+              <td class="table-cell" data-row="8" data-col="6" data-value="empty"></td>
+              <td class="table-cell" data-row="8" data-col="7" data-value="empty"></td>
+              <td class="table-cell" data-row="8" data-col="8" data-value="empty"></td>
+              <td class="table-cell" data-row="8" data-col="9" data-value="empty"></td>
+            </tr>
+            <tr class="table-row">
+              <td class="table-cell" data-row="9" data-col="0" data-value="empty"></td>
+              <td class="table-cell" data-row="9" data-col="1" data-value="empty"></td>
+              <td class="table-cell" data-row="9" data-col="2" data-value="empty"></td>
+              <td class="table-cell" data-row="9" data-col="3" data-value="empty"></td>
+              <td class="table-cell" data-row="9" data-col="4" data-value="empty"></td>
+              <td class="table-cell" data-row="9" data-col="5" data-value="empty"></td>
+              <td class="table-cell" data-row="9" data-col="6" data-value="empty"></td>
+              <td class="table-cell" data-row="9" data-col="7" data-value="empty"></td>
+              <td class="table-cell" data-row="9" data-col="8" data-value="empty"></td>
+              <td class="table-cell" data-row="9" data-col="9" data-value="empty"></td>
+            </tr>
+          </table>
+          <div class="grid-name">Your grid</div>
+        </div>
+        <div class="opponent-grid">
+          <table class="opponent-table">
+            <tr class="table-row">
+              <td class="table-cell" data-row="0" data-col="0" data-value="empty"></td>
+              <td class="table-cell" data-row="0" data-col="1" data-value="empty"></td>
+              <td class="table-cell" data-row="0" data-col="2" data-value="empty"></td>
+              <td class="table-cell" data-row="0" data-col="3" data-value="empty"></td>
+              <td class="table-cell" data-row="0" data-col="4" data-value="empty"></td>
+              <td class="table-cell" data-row="0" data-col="5" data-value="empty"></td>
+              <td class="table-cell" data-row="0" data-col="6" data-value="empty"></td>
+              <td class="table-cell" data-row="0" data-col="7" data-value="empty"></td>
+              <td class="table-cell" data-row="0" data-col="8" data-value="empty"></td>
+              <td class="table-cell" data-row="0" data-col="9" data-value="empty"></td>
+            </tr>
+            <tr class="table-row">
+              <td class="table-cell" data-row="1" data-col="0" data-value="empty"></td>
+              <td class="table-cell" data-row="1" data-col="1" data-value="empty"></td>
+              <td class="table-cell" data-row="1" data-col="2" data-value="empty"></td>
+              <td class="table-cell" data-row="1" data-col="3" data-value="empty"></td>
+              <td class="table-cell" data-row="1" data-col="4" data-value="empty"></td>
+              <td class="table-cell" data-row="1" data-col="5" data-value="empty"></td>
+              <td class="table-cell" data-row="1" data-col="6" data-value="empty"></td>
+              <td class="table-cell" data-row="1" data-col="7" data-value="empty"></td>
+              <td class="table-cell" data-row="1" data-col="8" data-value="empty"></td>
+              <td class="table-cell" data-row="1" data-col="9" data-value="empty"></td>
+            </tr>
+            <tr class="table-row">
+              <td class="table-cell" data-row="2" data-col="0" data-value="empty"></td>
+              <td class="table-cell" data-row="2" data-col="1" data-value="empty"></td>
+              <td class="table-cell" data-row="2" data-col="2" data-value="empty"></td>
+              <td class="table-cell" data-row="2" data-col="3" data-value="empty"></td>
+              <td class="table-cell" data-row="2" data-col="4" data-value="empty"></td>
+              <td class="table-cell" data-row="2" data-col="5" data-value="empty"></td>
+              <td class="table-cell" data-row="2" data-col="6" data-value="empty"></td>
+              <td class="table-cell" data-row="2" data-col="7" data-value="empty"></td>
+              <td class="table-cell" data-row="2" data-col="8" data-value="empty"></td>
+              <td class="table-cell" data-row="2" data-col="9" data-value="empty"></td>
+            </tr>
+            <tr class="table-row">
+              <td class="table-cell" data-row="3" data-col="0" data-value="empty"></td>
+              <td class="table-cell" data-row="3" data-col="1" data-value="empty"></td>
+              <td class="table-cell" data-row="3" data-col="2" data-value="empty"></td>
+              <td class="table-cell" data-row="3" data-col="3" data-value="empty"></td>
+              <td class="table-cell" data-row="3" data-col="4" data-value="empty"></td>
+              <td class="table-cell" data-row="3" data-col="5" data-value="empty"></td>
+              <td class="table-cell" data-row="3" data-col="6" data-value="empty"></td>
+              <td class="table-cell" data-row="3" data-col="7" data-value="empty"></td>
+              <td class="table-cell" data-row="3" data-col="8" data-value="empty"></td>
+              <td class="table-cell" data-row="3" data-col="9" data-value="empty"></td>
+            </tr>
+            <tr class="table-row">
+              <td class="table-cell" data-row="4" data-col="0" data-value="empty"></td>
+              <td class="table-cell" data-row="4" data-col="1" data-value="empty"></td>
+              <td class="table-cell" data-row="4" data-col="2" data-value="empty"></td>
+              <td class="table-cell" data-row="4" data-col="3" data-value="empty"></td>
+              <td class="table-cell" data-row="4" data-col="4" data-value="empty"></td>
+              <td class="table-cell" data-row="4" data-col="5" data-value="empty"></td>
+              <td class="table-cell" data-row="4" data-col="6" data-value="empty"></td>
+              <td class="table-cell" data-row="4" data-col="7" data-value="empty"></td>
+              <td class="table-cell" data-row="4" data-col="8" data-value="empty"></td>
+              <td class="table-cell" data-row="4" data-col="9" data-value="empty"></td>
+            </tr>
+            <tr class="table-row">
+              <td class="table-cell" data-row="5" data-col="0" data-value="empty"></td>
+              <td class="table-cell" data-row="5" data-col="1" data-value="empty"></td>
+              <td class="table-cell" data-row="5" data-col="2" data-value="empty"></td>
+              <td class="table-cell" data-row="5" data-col="3" data-value="empty"></td>
+              <td class="table-cell" data-row="5" data-col="4" data-value="empty"></td>
+              <td class="table-cell" data-row="5" data-col="5" data-value="empty"></td>
+              <td class="table-cell" data-row="5" data-col="6" data-value="empty"></td>
+              <td class="table-cell" data-row="5" data-col="7" data-value="empty"></td>
+              <td class="table-cell" data-row="5" data-col="8" data-value="empty"></td>
+              <td class="table-cell" data-row="5" data-col="9" data-value="empty"></td>
+            </tr>
+            <tr class="table-row">
+              <td class="table-cell" data-row="6" data-col="0" data-value="empty"></td>
+              <td class="table-cell" data-row="6" data-col="1" data-value="empty"></td>
+              <td class="table-cell" data-row="6" data-col="2" data-value="empty"></td>
+              <td class="table-cell" data-row="6" data-col="3" data-value="empty"></td>
+              <td class="table-cell" data-row="6" data-col="4" data-value="empty"></td>
+              <td class="table-cell" data-row="6" data-col="5" data-value="empty"></td>
+              <td class="table-cell" data-row="6" data-col="6" data-value="empty"></td>
+              <td class="table-cell" data-row="6" data-col="7" data-value="empty"></td>
+              <td class="table-cell" data-row="6" data-col="8" data-value="empty"></td>
+              <td class="table-cell" data-row="6" data-col="9" data-value="empty"></td>
+            </tr>
+            <tr class="table-row">
+              <td class="table-cell" data-row="7" data-col="0" data-value="empty"></td>
+              <td class="table-cell" data-row="7" data-col="1" data-value="empty"></td>
+              <td class="table-cell" data-row="7" data-col="2" data-value="empty"></td>
+              <td class="table-cell" data-row="7" data-col="3" data-value="empty"></td>
+              <td class="table-cell" data-row="7" data-col="4" data-value="empty"></td>
+              <td class="table-cell" data-row="7" data-col="5" data-value="empty"></td>
+              <td class="table-cell" data-row="7" data-col="6" data-value="empty"></td>
+              <td class="table-cell" data-row="7" data-col="7" data-value="empty"></td>
+              <td class="table-cell" data-row="7" data-col="8" data-value="empty"></td>
+              <td class="table-cell" data-row="7" data-col="9" data-value="empty"></td>
+            </tr>
+            <tr class="table-row">
+              <td class="table-cell" data-row="8" data-col="0" data-value="empty"></td>
+              <td class="table-cell" data-row="8" data-col="1" data-value="empty"></td>
+              <td class="table-cell" data-row="8" data-col="2" data-value="empty"></td>
+              <td class="table-cell" data-row="8" data-col="3" data-value="empty"></td>
+              <td class="table-cell" data-row="8" data-col="4" data-value="empty"></td>
+              <td class="table-cell" data-row="8" data-col="5" data-value="empty"></td>
+              <td class="table-cell" data-row="8" data-col="6" data-value="empty"></td>
+              <td class="table-cell" data-row="8" data-col="7" data-value="empty"></td>
+              <td class="table-cell" data-row="8" data-col="8" data-value="empty"></td>
+              <td class="table-cell" data-row="8" data-col="9" data-value="empty"></td>
+            </tr>
+            <tr class="table-row">
+              <td class="table-cell" data-row="9" data-col="0" data-value="empty"></td>
+              <td class="table-cell" data-row="9" data-col="1" data-value="empty"></td>
+              <td class="table-cell" data-row="9" data-col="2" data-value="empty"></td>
+              <td class="table-cell" data-row="9" data-col="3" data-value="empty"></td>
+              <td class="table-cell" data-row="9" data-col="4" data-value="empty"></td>
+              <td class="table-cell" data-row="9" data-col="5" data-value="empty"></td>
+              <td class="table-cell" data-row="9" data-col="6" data-value="empty"></td>
+              <td class="table-cell" data-row="9" data-col="7" data-value="empty"></td>
+              <td class="table-cell" data-row="9" data-col="8" data-value="empty"></td>
+              <td class="table-cell" data-row="9" data-col="9" data-value="empty"></td>
+            </tr>
+          </table>
+          <div class="grid-name">Opponent's grid</div>
+        </div>
+      </div>
+    </div>
+    <div class="gameover-container hide">
+      <div class="gameover">
+        <p class="modal-msg"></p>
+        <button class="game-start play-again">Play Again</button>
+      </div>
+    </div>
+  </body>
+</html>
