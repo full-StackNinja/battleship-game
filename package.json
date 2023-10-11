@@ -6,7 +6,9 @@
   "scripts": {
     "build": "webpack",
     "test": "jest",
-    "start": "webpack serve --open"
+    "start": "webpack serve --open",
+    "publishPage": "git subtree push --prefix dist origin gh-pages",
+    "deploy": "gh-pages -d dist"
   },
   "keywords": [],
   "author": "",
