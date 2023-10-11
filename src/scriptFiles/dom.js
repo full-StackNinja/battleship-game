@@ -395,6 +395,7 @@ export default (function domManipulation() {
     removeShips,
     hideInitPage,
     hideShipPage,
+    showShipPage,
     showGamePage,
     hideGamePage,
     hideModalContainer,
