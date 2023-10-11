@@ -164,7 +164,7 @@ function gameLoop() {
     // If first turn is of ai then
     setTimeout(() => {
       aiTurn();
-    }, 1);
+    }, 1000);
   }
 
   function playerTurn(e) {
@@ -205,7 +205,7 @@ function gameLoop() {
           // Disable opponent table during ai's turn
           disableOppTable();
           // Call ai's turn
-          setTimeout(aiTurn, 1);
+          setTimeout(aiTurn, 1000);
         }
       }
     }
