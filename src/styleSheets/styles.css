@@ -1,0 +1,275 @@
+body {
+  font-size: calc(16rem + (20 - 16) * ((100vw - 320rem) / (1920 - 320)));
+  background-color: #fff;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.game-title {
+  width: 100%;
+  margin: 2vw auto;
+  text-align: center;
+  font-family: "Tourney";
+  font: bold;
+  font-size: calc(28rem + (80 - 28) * ((100vw - 320rem) / (1920 - 320)));
+  color: #500724;
+  margin-bottom: 5vw;
+  font-weight: 700;
+}
+
+.initial-page {
+  position: absolute;
+  width: 60vw;
+  height: 80vh;
+  z-index: 3;
+  background-color: #422006;
+  box-shadow: 3rem 3rem 3rem rgba(0, 0, 0, 0.3);
+  top: 10vh;
+  left: 20vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.game-title.init-page {
+  color: #5978f5;
+}
+
+button.game-start.init-page,
+.play-again {
+  width: fit-content;
+  font-weight: 700;
+  padding: 5rem;
+  background-color: #5978f5;
+  cursor: pointer;
+  border-radius: 5rem;
+}
+
+.initial-page.hide {
+  display: none;
+  pointer-events: none;
+}
+.initial-page.hide > :nth-child(n) {
+  pointer-events: none;
+}
+.initial-page.show {
+  display: block;
+  pointer-events: all;
+}
+
+.ship-placement-page {
+  position: absolute;
+  width: 60vw;
+  height: 80vh;
+  padding: 2vw;
+  z-index: 2;
+  background-color: #abb8b7;
+  box-shadow: 3rem 3rem 3rem rgba(0, 0, 0, 0.3);
+  top: 10vh;
+  left: 20vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.ship-placement-page.hide {
+  opacity: 0;
+  display: none;
+  pointer-events: none;
+}
+
+.ship-placement-page.show {
+  opacity: 1;
+  display: flex;
+  pointer-events: all;
+}
+
+.ship-name {
+  padding: 5rem;
+  font-weight: bold;
+}
+
+.rotate-btn {
+  box-sizing: border-box;
+  display: flex;
+  color: #0f766e;
+  padding: 1rem;
+  align-items: center;
+  justify-content: center;
+  gap: 1vw;
+}
+
+.rotate-btn:hover {
+  outline: 1rem solid #636161;
+  border-radius: 5rem;
+}
+
+.rotate-text {
+  border-bottom: 1rem dashed #0f766e;
+  pointer-events: none;
+}
+
+.random-icon {
+  pointer-events: none;
+  width: calc(16rem + (22 - 16) * ((100vw - 320rem) / (920 - 320)));
+}
+
+.ship-placement-page .your-table .table-cell {
+  border: 1rem solid rgb(111, 111, 214);
+}
+
+.gameplay-page {
+  position: relative;
+  z-index: 1;
+  width: 60vw;
+  height: fit-content;
+  margin: 0 auto;
+  border: 1rem solid;
+  border-radius: 5rem;
+}
+
+.gameplay-page.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.gameplay-page.show {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.turn-message {
+  width: 12vw;
+  padding: 0.5vw;
+  margin: 1vw auto;
+  background-color: #f1f5f9;
+  border-radius: 3rem;
+  text-align: center;
+}
+
+.grids-container {
+  margin: 2vw auto;
+  width: 60vw;
+  height: 25vw;
+  padding: 2vw;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 5vw;
+  align-items: center;
+}
+
+.your-grid,
+.opponent-grid {
+  position: relative;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1vw;
+}
+
+.your-table,
+.opponent-table {
+  width: 20vw;
+  height: 20vw;
+  pointer-events: none;
+}
+
+.table-cell {
+  width: 2vw;
+  height: 2vw;
+  pointer-events: all;
+}
+
+.moving {
+  border: 1rem dashed #5978f5;
+  pointer-events: none;
+}
+
+.placed {
+  border: 2rem solid blue;
+  background-color: rgba(0, 0, 0, 0.2);
+  pointer-events: all;
+}
+
+.sunk {
+  border: 3rem solid red;
+}
+
+.your-table .table-cell {
+  border: 1rem solid #5978f5;
+}
+
+.your-table .table-cell:hover {
+  cursor: pointer;
+}
+
+.opponent-table .table-cell {
+  border: 1rem solid #ccc;
+}
+
+.your-table-gameplay-page :nth-child(n) {
+  pointer-events: none;
+  user-select: none;
+}
+
+.opponent-table .table-cell:hover {
+  cursor: pointer;
+  background-color: #ccc;
+}
+
+.gameover-container {
+  position: absolute;
+  text-align: center;
+  z-index: 5;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.3);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.gameover-container.hide {
+  display: none;
+  background-color: rgba(0, 0, 0, 0);
+  width: 0;
+  height: 0;
+  transition: all linear 1s;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.gameover-container.show {
+  display: block;
+
+  background-color: rgba(0, 0, 0, 0.3);
+  pointer-events: auto;
+  width: 100vw;
+  height: 100vh;
+}
+
+.gameover {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  left: 30vw;
+  top: 30vh;
+  z-index: 4;
+  width: 40vw;
+  height: 40vh;
+  background-color: #422006;
+  color: #ccc;
+  border: 1rem solid;
+  border-radius: 5rem;
+}
+
+.modal-msg {
+  font-size: 48rem;
+}
