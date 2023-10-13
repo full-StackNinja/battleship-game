@@ -183,7 +183,7 @@ export default (function domManipulation() {
             ((cellRect.right - gamePageRect.left - cellRect.width * length - 1.5) /
               window.innerWidth) *
             100;
-          const cellPosY = ((cellRect.top - gamePageRect.top - 1.5) / window.innerWidth) * 100;
+          const cellPosY = ((cellRect.top - gamePageRect.top - 1.5) / window.innerHeight) * 100;
 
           ship.style.left = `${cellPosX}vw`;
           ship.style.top = `${cellPosY}vh`;
@@ -201,11 +201,11 @@ export default (function domManipulation() {
           const cellPosX = ((cellRect.left - gamePageRect.left - 1.5) / window.innerWidth) * 100;
           const cellPosY =
             ((cellRect.bottom - gamePageRect.top - cellRect.width * length - 1.5) /
-              window.innerWidth) *
+              window.innerHeight) *
             100;
 
           ship.style.left = `${cellPosX}vw`;
-          ship.style.top = `${cellPosY}vw`;
+          ship.style.top = `${cellPosY}vh`;
           ship.style.border = "2rem solid blue";
           ship.style.backgroundColor = "rgba(0, 0, 0, 0.2)";
         }
