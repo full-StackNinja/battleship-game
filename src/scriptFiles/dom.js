@@ -163,10 +163,13 @@ export default (function domManipulation() {
 
           const cellRect = cellEnd.getBoundingClientRect();
           const gamePageRect = gamePlayPage.getBoundingClientRect();
-          const cellPosX = cellRect.right - gamePageRect.left - cellRect.width * length - 1.5;
-          const cellPosY = cellRect.top - gamePageRect.top - 1.5;
-          ship.style.left = `${cellPosX}rem`;
-          ship.style.top = `${cellPosY}rem`;
+          const cellPosX =
+            ((cellRect.right - gamePageRect.left - cellRect.width * length - 1.5) /
+              window.innerWidth) *
+            100;
+          const cellPosY = ((cellRect.top - gamePageRect.top - 1.5) / window.innerHeight) * 100;
+          ship.style.left = `${cellPosX}vw`;
+          ship.style.top = `${cellPosY}vh`;
           ship.style.border = "2rem solid blue";
           ship.style.backgroundColor = "rgba(0, 0, 0, 0.2)";
         }
@@ -176,11 +179,14 @@ export default (function domManipulation() {
 
           const cellRect = cellEnd.getBoundingClientRect();
           const gamePageRect = gamePlayPage.getBoundingClientRect();
-          const cellPosX = cellRect.right - gamePageRect.left - cellRect.width * length - 1.5;
-          const cellPosY = cellRect.top - gamePageRect.top - 1.5;
+          const cellPosX =
+            ((cellRect.right - gamePageRect.left - cellRect.width * length - 1.5) /
+              window.innerWidth) *
+            100;
+          const cellPosY = ((cellRect.top - gamePageRect.top - 1.5) / window.innerWidth) * 100;
 
-          ship.style.left = `${cellPosX}rem`;
-          ship.style.top = `${cellPosY}rem`;
+          ship.style.left = `${cellPosX}vw`;
+          ship.style.top = `${cellPosY}vh`;
         }
       }
       if (orient === "y") {
@@ -192,11 +198,14 @@ export default (function domManipulation() {
 
           const cellRect = cellEnd.getBoundingClientRect();
           const gamePageRect = gamePlayPage.getBoundingClientRect();
-          const cellPosX = cellRect.left - gamePageRect.left - 1.5;
-          const cellPosY = cellRect.bottom - gamePageRect.top - cellRect.width * length - 1.5;
+          const cellPosX = ((cellRect.left - gamePageRect.left - 1.5) / window.innerWidth) * 100;
+          const cellPosY =
+            ((cellRect.bottom - gamePageRect.top - cellRect.width * length - 1.5) /
+              window.innerWidth) *
+            100;
 
-          ship.style.left = `${cellPosX}rem`;
-          ship.style.top = `${cellPosY}rem`;
+          ship.style.left = `${cellPosX}vw`;
+          ship.style.top = `${cellPosY}vw`;
           ship.style.border = "2rem solid blue";
           ship.style.backgroundColor = "rgba(0, 0, 0, 0.2)";
         }
