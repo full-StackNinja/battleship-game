@@ -11,4 +11,4 @@
 
 ## Screen Shot:
 
-![](./battleship-image.png)
+![alt text](./src/assets/icons/battleship-image.png)
